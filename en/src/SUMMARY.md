@@ -1,0 +1,22 @@
+# Summary
+
+- [Overview](chapter_01_rust_overview.md)
+- [Variables, Types and Control](chapter_02_variables_types_control.md)
+- [Ownership & Borrowing](chapter_03_ownership_borrowing.md)
+- [Structs & Enums](chapter_04_structs_enums.md)
+- [Chapter 04 Summary](chapter_04_summary.md)
+- [Generics & Traits](chapter_05_generics_traits.md)
+- [Error Handling](chapter_06_error_handling.md)
+- [Collections](chapter_07_collections.md)
+- [Modules](chapter_08_modules.md)
+- [Concurrency](chapter_09_concurrency.md)
+- [Network Programming](chapter_10_network_programming.md)
+- [Database Operations](chapter_11_database_operations.md)
+- [Web Development](chapter_12_web_development.md)
+- [Embedded / Performance](chapter_13_embedded.md)
+- [Performance Optimization](chapter_13_performance_optimization.md)
+- [Rust Book Notes](chapter_14_rust_book.md)
+- [Security Programming](chapter_14_security_programming.md)
+- [Testing & Debugging](chapter_15_testing_and_debugging.md)
+- [Deployment Operations](chapter_16_deployment_operations.md)
+

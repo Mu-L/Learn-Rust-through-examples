@@ -1,6 +1,15 @@
+
 # Learn Rust through Examples
 
 一个从零开始学习 Rust 的系统性教程，通过实例和实践帮助你掌握 Rust 编程语言。
+
+<div align="center">
+
+中文 | <a href="README.en.md">English</a>
+
+</div>
+
+---
 
 ## 📚 关于本书
 
@@ -42,14 +51,73 @@ cargo install mdbook
 ```bash
 # 克隆仓库
 git clone <repository-url>
-cd WORKDIR
+cd Learn-Rust-through-examples
+```
 
-# 构建书籍
+### 🌐 多语言使用说明
+
+- **目录结构**：
+  - `zh/` - 中文版（包含所有中文章节）
+  - `en/` - 英文版（请手动添加或翻译英文章节）
+- 每个语言目录都有独立的 `book.toml` 配置文件和 `src/` 源文件目录。
+
+- **构建流程（推荐）**：仓库根提供 `Makefile`，包含常用目标。示例命令：
+
+```bash
+# 在仓库根运行（将 en 构建并复制到 book/en）
+make build-en
+
+# 如果存在 zh/，构建并复制到 book/zh
+make build-zh
+
+# 构建所有已配置语言
+make build-all
+
+# 预览中文版（在浏览器中查看，自动重载）
+make serve-zh
+
+# 预览英文版（在浏览器中查看，自动重载）
+make serve-en
+
+# 清理构建产物
+make clean
+```
+
+- **手动构建**（不使用 Makefile）：
+
+```bash
+# 构建中文版
+cd zh
 mdbook build
+cp -r book ../book/zh
 
-# 在浏览器中预览
+# 构建英文版
+cd ../en
+mdbook build
+cp -r book ../book/en
+```
+
+- **手动预览**（不使用 Makefile）：
+
+```bash
+# 预览中文版（在 http://localhost:3000 查看）
+cd zh
+mdbook serve
+
+# 预览英文版（在 http://localhost:3000 查看）
+cd en
 mdbook serve
 ```
+
+- **前置要求**：确保已安装 `mdbook`（例如 `cargo install mdbook`）。Makefile 使用 `mdbook build`，请先安装并在 PATH 中可用。
+
+- **输出位置**：构建完成后，静态站点文件将位于：
+  - `book/zh/` - 中文版
+  - `book/en/` - 英文版
+  
+  将这些目录部署到静态托管服务（例如 GitHub Pages）即可提供多语言访问，路径为 `/zh/` 和 `/en/`。
+
+---
 
 构建完成后，在浏览器中打开 `http://localhost:3000` 即可查看。
 
@@ -61,13 +129,24 @@ mdbook serve
 
 ```
 WORKDIR/
-├── book.toml          # mdBook 配置文件
+├── book.toml          # mdBook 配置文件（已弃用，使用各语言目录下的配置）
 ├── README             # 项目说明文档
-├── src/               # Markdown 源文件
-│   ├── SUMMARY.md     # 目录结构
-│   ├── chapter_*.md   # 各章节内容
-│   └── chapter_*.rs   # 代码示例
+├── Makefile           # 多语言构建脚本
+├── zh/                # 中文版源文件
+│   ├── book.toml      # 中文版配置
+│   └── src/           # 中文 Markdown 源文件
+│       ├── SUMMARY.md # 目录结构
+│       ├── chapter_*.md # 各章节内容
+│       └── chapter_*.rs # 代码示例
+├── en/                # 英文版源文件
+│   ├── book.toml      # 英文版配置
+│   └── src/           # 英文 Markdown 源文件
+│       └── SUMMARY.md # 目录结构
+│       ├── chapter_*.md # 各章节内容
+│       └── chapter_*.rs # 代码示例
 └── book/              # 构建输出目录
+    ├── zh/            # 中文版构建产物
+    └── en/            # 英文版构建产物
 ```
 
 ## 💡 学习建议

@@ -1,0 +1,5 @@
+[book]
+title = "Learn Rust through examples"
+authors = ["lihongchao"]
+language = "zh"
+src = "src"
