@@ -8,6 +8,12 @@
 中文 | <a href="README.en.md">English</a>
 
 </div>
+在线阅读：
+<div align="center">
+
+中文：https://rustbyexample-cn.gfor.xyz/ | English: https://rustbyexample.gfor.xyz/
+
+</div>
 
 ---
 
